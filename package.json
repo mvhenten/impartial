@@ -1,0 +1,33 @@
+{
+  "name": "impartial",
+  "version": "0.0.1",
+  "description": "Treat all input impartially (slice arguments functionally)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/impartial.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvhenten/impartial.git"
+  },
+  "keywords": [
+    "functional",
+    "slice",
+    "arguments"
+  ],
+  "author": "Matthijs van Henten",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mvhenten/impartial/issues"
+  },
+  "homepage": "https://github.com/mvhenten/impartial#readme",
+  "dependencies": {
+    "sliced": "^1.0.1"
+  },
+  "devDependencies": {
+    "tape": "^4.2.2"
+  }
+}

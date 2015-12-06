@@ -1,43 +1,11 @@
-# impartial
+"use strict";
 
-Slice arguments before they exists. e.g. makes your function "impartial" to some 
-of the arguments.
+var test = require("tape");
+var impartial = require("../index");
+var slice = require("sliced");
 
-Consider this a negation of "curry" in the sense that it allows you to slice
-arguments passed to the function before they exist.
 
-You could also see this as an inverse of `_.partial`, hence the name.
-If you need something like this, maybe your api's don't fit well together.
-
-### Install
-
-`npm install impartial`
-
-### Examples
-
-```javascript
-    var impartial = require("impartial");
-
-    // in an async world, keep the "next" and ignore the rest:
-    
-    async.waterfall([
-        function giveTwo(next){
-            next(null, 1, 2 );
-        },
-        // block all except the last arg
-        // so we can predict our async loop
-        impartial(function(two, next){
-            next(null, two+1);
-        }, -1)
-    ], done)
-
-```
-
-Or like the tests:
-
-```javascript
-    var impartial = require("impartial");
-
+test("impartial", function(assert) {
     var dummy = function() {
         return slice(arguments);
     };
@@ -81,5 +49,4 @@ Or like the tests:
     });
 
     assert.end();
-```
-
+});
